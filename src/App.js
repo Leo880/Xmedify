@@ -24,11 +24,11 @@ function App() {
 
 export default App;
 */
-
+/*
 import React, { useEffect, useMemo, useState } from "react";
 import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
 
-/** ---------------- NAVBAR ---------------- */
+// ---------------- NAVBAR ---------------- 
 function Navbar() {
   return (
     <header className="topbar">
@@ -51,7 +51,7 @@ function Navbar() {
   );
 }
 
-/** ---------------- HOME (SEARCH) ---------------- */
+// ---------------- HOME (SEARCH) ---------------- 
 function Home() {
   const [states, setStates]   = useState([]);
   const [cities, setCities]   = useState([]);
@@ -118,7 +118,7 @@ function Home() {
   );
 }
 
-/** ---------------- RESULTS ---------------- */
+// ---------------- RESULTS ---------------- 
 function useQuery() {
   const { search } = useLocation();
   return useMemo(() => new URLSearchParams(search), [search]);
@@ -194,7 +194,7 @@ function Results() {
   );
 }
 
-/** ---------------- MY BOOKINGS ---------------- */
+// ---------------- MY BOOKINGS ---------------- 
 function MyBookings() {
   const [bookings] = useState(() =>
     JSON.parse(localStorage.getItem("bookings") || "[]")
@@ -216,7 +216,7 @@ function MyBookings() {
   );
 }
 
-/** ---------------- APP ROOT ---------------- */
+// ---------------- APP ROOT ---------------- 
 export default function App() {
   return (
     <>
@@ -231,7 +231,7 @@ export default function App() {
   );
 }
 
-/** ---------------- FOOTER ---------------- */
+// ---------------- FOOTER ---------------- 
 function Footer() {
   return (
     <footer className="footer">
@@ -252,4 +252,27 @@ function Footer() {
       </div>
     </footer>
   );
+}*/
+
+
+
+import { Outlet } from "react-router-dom";
+import { CssBaseline } from "@mui/material";
+import Footer from "./components/Footer/Footer";
+import DownloadApp from "./components/Sections/DownloadApp/DownloadApp";
+
+function App() {
+  return (
+    <div>
+      <CssBaseline />
+      <Outlet />
+      <DownloadApp />
+      <Footer />
+    </div>
+  );
 }
+
+export default App;
+
+
+
