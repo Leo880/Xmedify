@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -35,4 +35,159 @@
   to {
     transform: rotate(360deg);
   }
+}
+*/
+
+
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+:root {
+  --primary: #0a7bdc;
+  --primary-600: #0664b6;
+  --bg: #f3f7fd;
+  --card: #ffffff;
+  --muted: #667085;
+  --success: #22c55e;
+  --border: #e6ebf2;
+  --radius: 12px;
+}
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: #101828;
+}
+
+/* ===== Top bar ===== */
+.topbar-strip {
+  background: #5db2ff;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 10px;
+}
+.navbar {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .brand { font-weight: 700; letter-spacing: .3px; }
+.navbar .navlinks { display: flex; gap: 18px; align-items: center; }
+.navbar a { color: #fff; text-decoration: none; opacity: .95; }
+.navbar a:hover { opacity: 1; }
+.btn-secondary {
+  padding: 8px 12px;
+  background: #094e86;
+  border-radius: 8px;
+}
+
+/* ===== Page shell ===== */
+.page { padding: 24px; max-width: 1120px; margin: 0 auto; }
+
+/* ===== Search ===== */
+.searchShell { margin-top: 8px; }
+.searchBox {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(16,24,40,.06);
+  border-radius: var(--radius);
+  padding: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.field {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; align-items: center;
+  padding: 8px 10px;
+  gap: 8px;
+}
+.field select {
+  border: none; outline: none; background: transparent;
+  font-size: 14px; min-width: 160px;
+}
+.icon { opacity: .6; }
+.btn-primary {
+  background: var(--primary);
+  border: none; color: #fff;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--primary-600); }
+
+/* ===== Results ===== */
+.resultsHeader h1 {
+  font-size: 22px;
+  margin: 20px 0 6px;
+}
+.muted { color: var(--muted); font-size: 14px; }
+.loading { color: var(--muted); margin: 12px 0; }
+
+.resultsList { margin-top: 16px; display: grid; gap: 16px; }
+.hospitalCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(16,24,40,.06);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hospitalCard .left { display: flex; gap: 12px; align-items: center; }
+.avatar {
+  width: 64px; height: 64px; border-radius: 999px;
+  background: #e8f3ff; display: grid; place-items: center; font-size: 28px;
+}
+.meta h3 { margin: 0 0 6px; color: var(--primary); font-size: 18px; }
+.addr { color: var(--muted); margin: 0 0 6px; }
+.free { color: #12b76a; font-weight: 600; margin: 0; }
+.right { display: grid; gap: 10px; justify-items: end; }
+.available {
+  color: var(--success);
+  background: #eafff2;
+  border: 1px solid #b8f3ce;
+  padding: 6px 10px; border-radius: 999px; font-weight: 600; font-size: 12px;
+}
+.btn-cta {
+  background: #1a9bff; color: #fff; border: none; cursor: pointer;
+  padding: 10px 14px; border-radius: 10px; font-weight: 700;
+}
+.btn-cta:hover { filter: brightness(.95); }
+
+/* ===== Bookings ===== */
+.myBookings h1 { margin: 16px 0; }
+.bookingCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px; margin: 12px 0;
+  box-shadow: 0 6px 18px rgba(16,24,40,.05);
+}
+.bookingCard h3 { color: var(--primary); margin: 0 0 6px; }
+
+/* ===== Footer ===== */
+.footer { background: #0b1f36; color: #cdd6e1; margin-top: 32px; }
+.footer-inner { max-width: 1120px; margin: 0 auto; padding: 28px 24px; }
+.footer .brand { color: #fff; font-weight: 700; margin-bottom: 12px; }
+.footer .cols { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.footer ul { list-style: none; padding: 0; margin: 0; }
+.footer li { padding: 6px 0; }
+.footer .copyright { margin-top: 16px; font-size: 12px; color: #93a3b6; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .navbar { flex-direction: column; gap: 8px; }
+  .navlinks { flex-wrap: wrap; justify-content: center; }
+  .hospitalCard { flex-direction: column; align-items: stretch; gap: 12px; }
+  .right { justify-items: stretch; }
+  .searchBox { flex-wrap: wrap; }
 }
