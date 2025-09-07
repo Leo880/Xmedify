@@ -71,6 +71,8 @@ export default function SearchHospital() {
       }}
     >
       {/* <div id="state"> */}
+      {
+        /*
         <Select
           displayEmpty
           name="state"
@@ -94,9 +96,36 @@ export default function SearchHospital() {
               {state}
             </MenuItem>
           ))}
+        </Select> */
+      }
+        <div id="state">
+        <Select
+          displayEmpty
+          name="state"
+          value={formData.state}
+          onChange={handleChange}
+          startAdornment={
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          }
+          required
+          sx={{ minWidth: 200, width: "100%" }}
+        >
+          <MenuItem disabled value="">
+            State
+          </MenuItem>
+          {states.map((state) => (
+            <MenuItem key={state} value={state}>
+              {state}
+            </MenuItem>
+          ))}
         </Select>
-      {/* </div> */}
+      </div>
+
+      
       {/* <div id="city"> */}
+      {/*
         <Select
           displayEmpty
           name="city"
@@ -119,9 +148,36 @@ export default function SearchHospital() {
               {city}
             </MenuItem>
           ))}
+        </Select>*/}
+
+        <div id="city">
+        <Select
+          displayEmpty
+          name="city"
+          value={formData.city}
+          onChange={handleChange}
+          startAdornment={
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          }
+          required
+          sx={{ minWidth: 200, width: "100%" }}
+        >
+          <MenuItem disabled value="">
+            City
+          </MenuItem>
+          {cities.map((city) => (
+            <MenuItem key={city} value={city}>
+              {city}
+            </MenuItem>
+          ))}
         </Select>
+      </div>
+        
       {/* </div> */}
       <Button
+        id="seachBtn"
         type="submit"
         variant="contained"
         size="large"

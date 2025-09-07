@@ -9,14 +9,20 @@ export default function MyBookings() {
   const [bookings, setBookings] = useState([]);
   const [filteredBookings, setFilteredBookings] = useState([]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const localBookings = localStorage.getItem("bookings") || "[]";
     setBookings(JSON.parse(localBookings));
-  }, []);
+  }, []);*/
 
   useEffect(() => {
+  const localBookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+  setBookings(localBookings);
+  }, []);
+
+    useEffect(() => {
     setFilteredBookings(bookings);
   }, [bookings]);
+
 
   //Separate page/component to render all the booked hospitals of user alogwith chosen date and time slot
   //It utilises HospitalCard component to generate the cards with data

@@ -14,6 +14,10 @@ export default function Calendar({ availableSlots, details, handleBooking }) {
 
   return (
     <Box>
+      <p>Today</p>
+      <p>Morning</p>
+      <p>Afternoon</p>
+      <p>Evening</p>
       <DaySelector
         selectedDate={selectedDate}
         setSelectedDate={setSelectedDate}

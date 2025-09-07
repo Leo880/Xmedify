@@ -36,15 +36,14 @@ export default function HospitalCard({
             mb={1}
             textTransform="capitalize"
             lineHeight={1}
-            id="state"
+            
           >
-            {details["Hospital Name"].toLowerCase()}
+            {details["Hospital Name"]}
           </Typography>
           <Typography
             textTransform="capitalize"
             color="#414146"
-            fontSize={14}
-            id =  "city"
+            fontSize={14}            
             fontWeight={700}
           >
             {`${details["City"].toLowerCase()}, ${details["State"]}`}
