@@ -175,7 +175,7 @@ export default function SearchHospital() {
         </Select>
       </div>
         
-      {/* </div> */}
+      {/* 
       <Button
         id="seachBtn"
         type="submit"
@@ -186,7 +186,20 @@ export default function SearchHospital() {
         disableElevation
       >
         Search
-      </Button>
+      </Button>*/}
+      <div id="searchBtn">
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
+          startIcon={<SearchIcon />}
+          sx={{ py: "15px", px: 8, flexShrink: 0 }}
+          disableElevation
+        >
+        Search
+        </Button>
+      </div>
+      
     </Box>
   );
 }
